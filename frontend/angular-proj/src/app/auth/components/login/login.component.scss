@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+$background-color: #d7ccc8;
+$font-family: "Roboto", sans-serif;
+
+.btn {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  outline: 0;
+  border: 0;
+  width: 100%;
+  padding: 15px;
+  background-color: #ff5722;
+  color: #fafafa;
+  text-transform: uppercase;
+  cursor: pointer; /* Ensures the button is clearly clickable */
+}
+
+@mixin message($fontcolor: #90a4ae) {
+  color: $fontcolor;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+@mixin input($bkgnd: #f5f5f5) {
+  font-family: $font-family;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  outline: 0;
+  font-size: 15px;
+  text-align: center;
+  box-sizing: border-box;
+  background: $bkgnd;
+}
+
+body {
+  font-family: $font-family;
+  background: $background-color;
+}
+
+.container {
+  padding-top: 70px; // Adjust this value to be navbar height + 10px
+  width: 365px;
+  margin: auto;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  max-width: 400px; /* Increased max-width for a larger form */
+  margin: 0 auto 100px;
+  padding: 60px; /* Increased padding for a larger overall form */
+  background: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 10px; /* Rounded corners for aesthetic */
+}
+
+.form input {
+  @include input;
+
+  &::placeholder {
+    color: #90a4ae;
+  }
+}
+
+.form .message {
+  @include message;
+  a {
+    text-decoration: none;
+    color: #00bfa5;
+  }
+}
+
+.forgot {
+  text-align: right;
+  margin-top: -10px; /* Adjusted margin for better alignment */
+  a {
+    color: #ff5722;
+    text-decoration: none;
+  }
+}
+
+.button-block {
+  @extend .btn;
+  margin-top: 20px;
+}

@@ -1,0 +1,21 @@
+<div class="form">
+  <h1 class="form-title">View Courses</h1>
+  <div class="course-list">
+    <!-- Use *ngFor to loop over all courses and display each one -->
+    <div class="course-item" *ngFor="let course of courses">
+      <h2 class="course-title">{{ course.title }}</h2>
+      <p class="course-description">
+        {{ course.description }}
+      </p>
+      <span class="course-level">Level: {{ course.level }}</span>
+      <div class="course-actions">
+        <button class="button" routerLink="/admin/course/{{ course.title }}">
+          Edit
+        </button>
+        <button class="button" (click)="deleteCourse(course.title)">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

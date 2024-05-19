@@ -1,0 +1,45 @@
+<div class="form">
+  <div class="tab-content">
+    <div id="add-course">
+      <h1 class="form-title">Update Course</h1>
+      <form [formGroup]="updateForm">
+        <!-- <div class="field-wrap">
+          <label class="larger-label"
+            >Course Title<span class="req">*</span></label
+          >
+          <input type="text" autocomplete="off" formControlName="title" />
+        </div> -->
+        <div class="field-wrap">
+          <label class="larger-label">Description</label>
+          <textarea formControlName="description" autocomplete="off"></textarea>
+        </div>
+        <div class="field-wrap">
+          <label class="larger-label"
+            >Rating (1-10)<span class="req">*</span></label
+          >
+          <input type="number" min="1" max="10" formControlName="rating" />
+        </div>
+        <div class="field-wrap">
+          <label class="larger-label">Assignments</label>
+          <input type="text" autocomplete="off" formControlName="assignments" />
+        </div>
+        <div class="field-wrap">
+          <label class="larger-label">Level<span class="req">*</span></label>
+          <select formControlName="level">
+            <option value="BEGINNER">BEGINNER</option>
+            <option value="INTERMEDIATE">INTERMEDIATE</option>
+            <option value="ADVANCED">ADVANCED</option>
+            <option value="PRO">PRO</option>
+          </select>
+        </div>
+        <button
+          type="submit"
+          class="button button-block"
+          (click)="updateCourse()"
+        >
+          Update Course
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
